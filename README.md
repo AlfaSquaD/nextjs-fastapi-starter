@@ -1,36 +1,73 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# NextJs - FastAPI starter template
 
-## Getting Started
+This is a starter template for a NextJs frontend with a FastAPI backend.
 
-First, run the development server:
+## How to use
+
+You can develop the frontend and backend separately.
+
+To call the backend from the frontend, just prefix the endpoint with `/api`.
+
+```js
+const res = await fetch('/api/hello')
+```
+
+## Development
+
+### Development requirements
+
+- NodeJS
+
+- Python
+
+### How to run
+
+- Frontend
+
+On the root folder:
+
+ First Time
+
+```bash
+npm install
+```
+
+Run
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- Backend
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+In the backend folder:
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+First Time
 
-## Learn More
+```bash
+pip install -r requirements.txt
+```
 
-To learn more about Next.js, take a look at the following resources:
+Run
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+uvicorn main:app --reload
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+On development, because of the CSRF, you need to run browser with security disabled.
 
-## Deploy on Vercel
+(VSCode configuration is already set to run Chrome with security disabled)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Deployment
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+### Deploy requirements
+
+- Docker
+
+### How to deploy
+
+```bash
+docker-compose up
+```
+
+It will run on port 8080.
