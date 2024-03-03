@@ -54,7 +54,7 @@ Run
 uvicorn main:app --reload
 ```
 
-On development, because of the CSRF, you need to run browser with security disabled.
+On development, because of the CORS, you need to run browser with security disabled.
 
 (VSCode configuration is already set to run Chrome with security disabled)
 
